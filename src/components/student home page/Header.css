@@ -1,11 +1,13 @@
  .header {
-    height:60px;
+    height:80px;
     display: flex;
     align-items: center;
     background-color: #EDEDED;
     position: sticky;
     top: 0;
     z-index: 100;
+    left: 260px;
+    width: calc(100% - 260px);
   }
   .header img{
     width: 200px;
@@ -15,7 +17,7 @@
   }
   .header h2{
    flex: 1;
-    color:rgb(69, 69, 194);
+    color:#05043D;
   }
    .header__nav{
     display: flex;
@@ -31,14 +33,14 @@
    margin-left:75px;
    margin-right: 75px;  
    font-size: larger; 
-   font-weight: 600;
+   font-weight: 800;
  } 
  .option-one:hover{
-  background-color: rgb(255, 94, 0) ;  
+  background-color: #D89C60 ;  
  }
  .logout{
     margin-left: 200px;
-    background-color: rgb(12, 12, 72);
+    background-color: #045174;
     color: aliceblue;
     border-radius: 10%;
     font-size: larger;
