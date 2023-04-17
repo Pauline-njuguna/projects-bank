@@ -5,7 +5,6 @@ const ProjectForm = () => {
   const [projectName, setProjectName] = useState("");
   const [description, setDescription] = useState("");
   const [owner, setOwner] = useState("");
-<<<<<<< HEAD
   const [members, setMembers] = useState([]);
   const [githubLink, setGithubLink] = useState("");
   const [course, setCourse] = useState("");
@@ -28,12 +27,6 @@ const ProjectForm = () => {
     setMembers(updatedMembers);
   };
 
-=======
-  const [members, setMembers] = useState("");
-  const [githubLink, setGithubLink] = useState("");
-  const [course, setCourse] = useState("");
-
->>>>>>> 7edec6e (Adds the project form to the ad project functionality)
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add logic to submit project data to backend or perform desired action
@@ -51,34 +44,13 @@ const ProjectForm = () => {
     setProjectName("");
     setDescription("");
     setOwner("");
-<<<<<<< HEAD
     setMembers([]);
-=======
-    setMembers("");
->>>>>>> 7edec6e (Adds the project form to the ad project functionality)
     setGithubLink("");
     setCourse("");
   };
 
   return (
     <div className="project-form-container">
-<<<<<<< HEAD
-=======
-      <div className="sidebar">
-        <h3>Navigation</h3>
-        <ul>
-          <li>
-            <a href="/messages">Messages</a>
-          </li>
-          <li>
-            <a href="/projects">Projects</a>
-          </li>
-          <li>
-            <a href="/cohorts">Cohorts</a>
-          </li>
-        </ul>
-      </div>
->>>>>>> 7edec6e (Adds the project form to the ad project functionality)
       <div className="form-container">
         <h2>Add New Project</h2>
         <form onSubmit={handleSubmit} className="project-form">
@@ -86,10 +58,7 @@ const ProjectForm = () => {
           <input
             type="text"
             id="projectName"
-<<<<<<< HEAD
             placeholder="Project Name"
-=======
->>>>>>> 7edec6e (Adds the project form to the ad project functionality)
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
             required
@@ -99,10 +68,7 @@ const ProjectForm = () => {
           <textarea
             id="description"
             value={description}
-<<<<<<< HEAD
             placeholder="Description"
-=======
->>>>>>> 7edec6e (Adds the project form to the ad project functionality)
             onChange={(e) => setDescription(e.target.value)}
             required
           ></textarea>
@@ -111,17 +77,13 @@ const ProjectForm = () => {
           <input
             type="text"
             id="owner"
-<<<<<<< HEAD
             placeholder="Owner"
-=======
->>>>>>> 7edec6e (Adds the project form to the ad project functionality)
             value={owner}
             onChange={(e) => setOwner(e.target.value)}
             required
           />
 
           <label htmlFor="members">Members</label>
-<<<<<<< HEAD
           {members.map((member, index) => (
             <div key={index}>
               <input
@@ -152,29 +114,16 @@ const ProjectForm = () => {
               Add Member
             </button>
           )}
-=======
-          <input
-            type="text"
-            id="members"
-            value={members}
-            onChange={(e) => setMembers(e.target.value)}
-            required
-          />
->>>>>>> 7edec6e (Adds the project form to the ad project functionality)
 
           <label htmlFor="githubLink">GitHub Link</label>
           <input
             type="text"
             id="githubLink"
-<<<<<<< HEAD
             placeholder="githubLink"
-=======
->>>>>>> 7edec6e (Adds the project form to the ad project functionality)
             value={githubLink}
             onChange={(e) => setGithubLink(e.target.value)}
           />
 
-<<<<<<< HEAD
           <label>
             <select value={course} onChange={(e) => setCourse(e.target.value)}>
               <option value="">Select a course</option>
@@ -186,15 +135,6 @@ const ProjectForm = () => {
               <option value="Cybersecurity">Cybersecurity</option>
             </select>
           </label>
-=======
-          <label htmlFor="course">Course</label>
-          <input
-            type="text"
-            id="course"
-            value={course}
-            onChange={(e) => setCourse(e.target.value)}
-          />
->>>>>>> 7edec6e (Adds the project form to the ad project functionality)
 
           <button type="submit">Submit</button>
         </form>
