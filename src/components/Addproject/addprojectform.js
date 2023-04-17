@@ -5,9 +5,27 @@ const ProjectForm = () => {
   const [projectName, setProjectName] = useState("");
   const [description, setDescription] = useState("");
   const [owner, setOwner] = useState("");
-  const [members, setMembers] = useState("");
+  const [members, setMembers] = useState([]);
   const [githubLink, setGithubLink] = useState("");
   const [course, setCourse] = useState("");
+
+  const handleMemberChange = (index, field, value) => {
+    const updatedMembers = [...members];
+    updatedMembers[index][field] = value;
+    setMembers(updatedMembers);
+  };
+
+  const addMember = () => {
+    if (members.length < 5) {
+      setMembers([...members, { name: "", email: "" }]);
+    }
+  };
+
+  const removeMember = (index) => {
+    const updatedMembers = [...members];
+    updatedMembers.splice(index, 1);
+    setMembers(updatedMembers);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,27 +44,13 @@ const ProjectForm = () => {
     setProjectName("");
     setDescription("");
     setOwner("");
-    setMembers("");
+    setMembers([]);
     setGithubLink("");
     setCourse("");
   };
 
   return (
     <div className="project-form-container">
-      <div className="sidebar">
-        <h3>Navigation</h3>
-        <ul>
-          <li>
-            <a href="/messages">Messages</a>
-          </li>
-          <li>
-            <a href="/projects">Projects</a>
-          </li>
-          <li>
-            <a href="/cohorts">Cohorts</a>
-          </li>
-        </ul>
-      </div>
       <div className="form-container">
         <h2>Add New Project</h2>
         <form onSubmit={handleSubmit} className="project-form">
@@ -54,6 +58,7 @@ const ProjectForm = () => {
           <input
             type="text"
             id="projectName"
+            placeholder="Project Name"
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
             required
@@ -63,6 +68,7 @@ const ProjectForm = () => {
           <textarea
             id="description"
             value={description}
+            placeholder="Description"
             onChange={(e) => setDescription(e.target.value)}
             required
           ></textarea>
@@ -71,35 +77,64 @@ const ProjectForm = () => {
           <input
             type="text"
             id="owner"
+            placeholder="Owner"
             value={owner}
             onChange={(e) => setOwner(e.target.value)}
             required
           />
 
           <label htmlFor="members">Members</label>
-          <input
-            type="text"
-            id="members"
-            value={members}
-            onChange={(e) => setMembers(e.target.value)}
-            required
-          />
+          {members.map((member, index) => (
+            <div key={index}>
+              <input
+                type="text"
+                placeholder="Name"
+                value={member.name}
+                onChange={(e) =>
+                  handleMemberChange(index, "name", e.target.value)
+                }
+                required
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={member.email}
+                onChange={(e) =>
+                  handleMemberChange(index, "email", e.target.value)
+                }
+                required
+              />
+              <button type="button" onClick={() => removeMember(index)}>
+                Remove
+              </button>
+            </div>
+          ))}
+          {members.length < 5 && (
+            <button type="button" onClick={addMember}>
+              Add Member
+            </button>
+          )}
 
           <label htmlFor="githubLink">GitHub Link</label>
           <input
             type="text"
             id="githubLink"
+            placeholder="githubLink"
             value={githubLink}
             onChange={(e) => setGithubLink(e.target.value)}
           />
 
-          <label htmlFor="course">Course</label>
-          <input
-            type="text"
-            id="course"
-            value={course}
-            onChange={(e) => setCourse(e.target.value)}
-          />
+          <label>
+            <select value={course} onChange={(e) => setCourse(e.target.value)}>
+              <option value="">Select a course</option>
+              <option value="Android Development">Android Development</option>
+              <option value="Full-Stack Development">
+                Full-Stack Development
+              </option>
+              <option value="Data Science">Data Science</option>
+              <option value="Cybersecurity">Cybersecurity</option>
+            </select>
+          </label>
 
           <button type="submit">Submit</button>
         </form>
