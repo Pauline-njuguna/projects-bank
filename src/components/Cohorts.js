@@ -1,21 +1,28 @@
 import React, { useState } from 'react';
 import CohortForm from './CohortForm';
+import './Cohort.css';
 
 const Cohorts = () => {
   const [cohorts, setCohorts] = useState([]);
   const [showForm, setShowForm] = useState(false);
+  const [selectedCohortIndex, setSelectedCohortIndex] = useState(-1);
 
   const handleAddCohort = (newCohort) => {
     setCohorts([...cohorts, newCohort]);
+    setShowForm(false);
   };
 
   const handleDeleteCohort = (cohortIndex) => {
-    const newCohorts = [...cohorts];
-    newCohorts.splice(cohortIndex, 1);
-    setCohorts(newCohorts);
+    const shouldDelete = window.confirm('Are you sure you want to delete this cohort?');
+    if (shouldDelete) {
+      const newCohorts = [...cohorts];
+      newCohorts.splice(cohortIndex, 1);
+      setCohorts(newCohorts);
+    }
   };
 
   const handleShowForm = () => {
+    setSelectedCohortIndex(-1);
     setShowForm(true);
   };
 
@@ -23,17 +30,37 @@ const Cohorts = () => {
     setShowForm(false);
   };
 
+  const handleAction = (action, cohortIndex) => {
+    if (action === 'Delete') {
+      handleDeleteCohort(cohortIndex);
+    } else if (action === 'Update') {
+      setSelectedCohortIndex(cohortIndex);
+      setShowForm(true);
+    }
+  };
+
   return (
     <div>
       <h1>COHORTS</h1>
-      <button onClick={handleShowForm}>Add Cohort</button>
-      {showForm && <CohortForm onClose={handleCloseForm} onAdd={handleAddCohort} />}
+      <button onClick={handleShowForm}>ADD COHORT</button>
+      {showForm && (
+        <div className="popup">
+          <div className="popup-inner">
+            <CohortForm
+              onClose={handleCloseForm}
+              onAdd={handleAddCohort}
+              onUpdate={setCohorts}
+              selectedCohort={cohorts[selectedCohortIndex]}
+            />
+          </div>
+        </div>
+      )}
       <table>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Course</th>
-            <th>Number of Students</th>
+            <th>NAME</th>
+            <th>COURSE</th>
+            <th>NUMBER OF STUDENT</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -44,7 +71,11 @@ const Cohorts = () => {
               <td>{cohort.course}</td>
               <td>{cohort.numberOfStudents}</td>
               <td>
-                <button onClick={() => handleDeleteCohort(index)}>Delete</button>
+                <select onChange={(e) => handleAction(e.target.value, index)}>
+                  <option disabled selected>Select an action</option>
+                  <option value="Update">Update</option>
+                  <option value="Delete">Delete</option>
+                </select>
               </td>
             </tr>
           ))}

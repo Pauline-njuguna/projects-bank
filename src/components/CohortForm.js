@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './CohortsForm.css';
 
 const CohortForm = (props) => {
   const [name, setName] = useState('');
@@ -18,20 +19,20 @@ const CohortForm = (props) => {
 
   return (
     <div>
-      <h2>Add Cohort</h2>
+      <h2>ADD COHORT</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:
+          NAME:
           <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
         </label>
         <br />
         <label>
-          Course:
+          COURSE:
           <input type="text" value={course} onChange={(event) => setCourse(event.target.value)} />
         </label>
         <br />
         <label>
-          Number of Students:
+          NUMBER OF STUDENTS:
           <input
             type="number"
             value={numberOfStudents}
