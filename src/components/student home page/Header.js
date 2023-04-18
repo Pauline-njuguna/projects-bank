@@ -2,11 +2,12 @@ import React from 'react'
 import './Header.css'
 import Sidebar from './Sidebar'
 import Course from './Course'
+import Footer from './Footer'
 function Header() {
   return (
     <>
         <div className='header'>
-                    <img src='https://o.remove.bg/downloads/56ab9f75-f768-4336-b1e6-52ad53ef7b0b/b0d7e1b5aa7fabb42bc1d622a1bedbc5--library-logo-technology-logo-removebg-preview.png' alt='logo'/>
+                    <img src='https://o.remove.bg/downloads/a2f8c532-c341-4299-b0df-298c15f4137d/63f816ae5cfb9e06b6852b78_Screenshot_2023-02-23_at_9.39.34_PM-removebg-preview.png' alt='logo'/>
                     <h2>Pay-Bank</h2>
 
                 <div className='header-nav'>
@@ -16,13 +17,14 @@ function Header() {
                 </div>
 
                 <div className='student-logout'>
-                    <button className='logout'>logout</button>
+                    <button className='logout'>login</button>
                 </div>
 
             </div>
 
             <Sidebar/>
             <Course/>
+            <Footer/>
     </>
     
   )

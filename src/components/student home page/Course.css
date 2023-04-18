@@ -1,24 +1,35 @@
 
 .course {
     display: flex;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 2rem;
     position: relative;
-    background: #E4e9f7;
+    background: white;
     height: 100vh;
     left: 260px;
     width: calc(100% - 260px);
+    
   }
   
   .stack {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 15pc; 
+    margin-top: 3pc;
+    border: 2px solid;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    height: fit-content;
+    box-shadow: 20px 20px 10px grey;
+    border-radius: 10px;
+
   }
   
   .pictures {
-    width: 300px;
+    width: 400px;
     height: 200px;
     object-fit: cover;
   }

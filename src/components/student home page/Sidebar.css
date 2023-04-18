@@ -2,9 +2,10 @@
     position: fixed;
     top: 0;
     bottom: 0;
+    
     height: 100%;
     width: 260px;
-    background: #11101d;
+    background: #160d75;
     z-index: 100;
     transition: all 0.5s ease;
 }
@@ -15,12 +16,15 @@
     padding-top: 25px;
     padding-bottom: 25px;
     font-size: xx-large;
-    color: white;    
+       
 }
 
 .options{
-    color: aliceblue;
+    
     list-style-type: none;
+}
+link{
+    color: white;
 }
 
 
