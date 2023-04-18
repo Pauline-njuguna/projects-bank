@@ -10,16 +10,21 @@ const Login = () => {
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleLogin = () => {
-  // Handle login logic here
-  // e.g. send email and password to backend for authentication
-  if (email === "example@example.com" && password === "password123") {
-    // Replace the above condition with your actual login logic
-    alert("Successful login"); // Show success message
-  } else {
-    alert("Login failed"); // Show failure message
-  }
-};
+    // Extract the domain from the email address
+    const domain = email.split("@")[1];
 
+    if (domain === "admin.com" && password === "admin123") {
+      alert("Admin login successful"); // Show success message
+      // Redirect to admin dashboard
+      window.location.href = "/admin-dashboard";
+    } else if (domain === "student.com" && password === "student123") {
+      alert("Student login successful"); // Show success message
+      // Redirect to student dashboard
+      window.location.href = "/student-dashboard";
+    } else {
+      alert("Login failed");
+    }
+  };
 
   const handleResetPassword = () => {
     if (newPassword !== confirmPassword) {
@@ -27,8 +32,6 @@ const Login = () => {
       return;
     }
     // Handle password reset logic here
-    // e.g. send email and newPassword to backend to update user's password
-    // and send an email with the new password to user's email address
     alert("Password reset successful!");
     setResetPassword(false);
   };
@@ -97,9 +100,8 @@ const Login = () => {
             <button
               className="login-button"
               type="button"
-              
-              onClick={() => setResetPassword(true)}>
-            
+              onClick={() => setResetPassword(true)}
+            >
               Forgot Password
             </button>
             <br />
