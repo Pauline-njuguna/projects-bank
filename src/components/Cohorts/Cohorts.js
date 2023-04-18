@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import CohortForm from './CohortForm';
+import CohortForm from '../CohortForm/CohortForm';
 import './Cohort.css';
 
 const Cohorts = () => {
@@ -61,26 +61,23 @@ const Cohorts = () => {
             <th>NAME</th>
             <th>COURSE</th>
             <th>NUMBER OF STUDENT</th>
-            <th>Action</th>
+            <th>ACTION</th>
           </tr>
         </thead>
+        </table>
         <tbody>
-          {cohorts.map((cohort, index) => (
-            <tr key={index}>
-              <td>{cohort.name}</td>
-              <td>{cohort.course}</td>
-              <td>{cohort.numberOfStudents}</td>
-              <td>
-                <select onChange={(e) => handleAction(e.target.value, index)}>
-                  <option disabled selected>Select an action</option>
-                  <option value="Update">Update</option>
-                  <option value="Delete">Delete</option>
-                </select>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+           
+            {cohorts.map((cohort, index) => (
+              <tr key={index}>
+                <td>{cohort.name}</td>
+                <td>{cohort.course}</td>
+                <td>{cohort.numberOfStudents}</td>
+                <td>
+                  <button className="delete-button" onClick={() => handleDeleteCohort(index)}>Delete</button>
+                </td>
+              </tr>
+            ))}            
+          </tbody>
     </div>
   );
 };
