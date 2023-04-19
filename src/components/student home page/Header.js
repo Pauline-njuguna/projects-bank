@@ -1,4 +1,3 @@
-import React from 'react'
 import './Header.css'
 import Sidebar from './Sidebar'
 import Course from './Course'
@@ -31,4 +30,3 @@ function Header() {
 }
 
 export default Header
-

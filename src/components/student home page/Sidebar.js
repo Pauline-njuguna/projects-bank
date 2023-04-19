@@ -7,20 +7,25 @@ const Sidebar = () => {
     <div className="sidebar">
       <ul>
         <li className="options">
-          <NavLink to="/messages">Messages</NavLink>
+        <NavLink to="/dashboard"> <h3>Dashboard</h3> </NavLink>
         </li>
         <li className="options">
-          <NavLink to="/departments">Departments</NavLink>
+          <NavLink to="/departments"><h3>Departments</h3></NavLink>
         </li>
         <li className="options">
-          <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/projects"><h3>Projects</h3></NavLink>
         </li>
         <li className="options">
-          <NavLink to="/dashboard">Dashboard</NavLink>
+          
+          <NavLink to="/contact"><h3>Messages</h3></NavLink>
         </li>
         
       </ul>
+      <div className='loout'>
+        <button>LogOut</button>
+      </div>
     </div>
+
   );
 };
 
