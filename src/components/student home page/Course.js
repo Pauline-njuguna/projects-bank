@@ -2,7 +2,9 @@ import React from 'react'
 import './Course.css'
 function Course() {
   return (
-    <div className='course'>
+    <>
+        <h1> Courses</h1>
+        <div className='course'>
        {/* <div><h1>Courses</h1></div>  */}
         <div className='stack'>
             <img className='pictures' src='https://crampete-staticfiles.s3.ap-south-1.amazonaws.com/images/blog/full-stack-development-project.png' alt='fullstack'/>
@@ -22,6 +24,8 @@ function Course() {
         </div>
 
     </div>
+    </>
+    
   )
 }
 
