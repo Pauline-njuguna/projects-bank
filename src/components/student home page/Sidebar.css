@@ -23,6 +23,17 @@
 .options{
 color: white;
 }
+.loout{
+    margin-top: 29pc;
+    text-align: right;
+   
+    
+}
+.loout button{
+    font-size: x-large;
+    font-weight: 800;
+    border-radius: 20px;
+}
 
 
 

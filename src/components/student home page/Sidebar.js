@@ -7,7 +7,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <ul>
         <li className="options">
-          <NavLink to="/messages">Messages</NavLink>
+        <NavLink to="/dashboard">Dashboard</NavLink>
         </li>
         <li className="options">
           <NavLink to="/departments">Departments</NavLink>
@@ -16,11 +16,16 @@ const Sidebar = () => {
           <NavLink to="/projects">Projects</NavLink>
         </li>
         <li className="options">
-          <NavLink to="/dashboard">Dashboard</NavLink>
+          
+          <NavLink to="/contact">Messages</NavLink>
         </li>
         
       </ul>
+      <div className='loout'>
+        <button>LogOut</button>
+      </div>
     </div>
+
   );
 };
 
