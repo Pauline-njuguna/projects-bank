@@ -104,10 +104,10 @@ export default function App() {
                 admissions@moringaschool.com
               </p>
               <p>
-                <MDBIcon icon="phone" className="me-3" /> + 01 234 567 88
+                <MDBIcon icon="phone" className="me-3" /> +02050021678
               </p>
               <p>
-                <MDBIcon icon="print" className="me-3" /> + 01 234 567 89
+                <MDBIcon icon="print" className="me-3" /> +020 7643533
               </p>
             </MDBCol>
           </MDBRow>

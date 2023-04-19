@@ -3,4 +3,5 @@
     width: calc(100% - 260px);
     bottom: 0%;
     position: fixed;
+    background-color: brown;
 }

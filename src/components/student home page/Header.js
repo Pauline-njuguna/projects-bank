@@ -6,7 +6,7 @@ function Header() {
   return (
     <>
         <div className='header'>
-                    <img src='https://o.remove.bg/downloads/f0545816-0851-4d63-9d5d-450343fd5161/63f816ae5cfb9e06b6852b78_Screenshot_2023-02-23_at_9.39.34_PM-removebg-preview.png' alt='logo'/>
+                    <img src='https://moringaschool.com/wp-content/uploads/2022/02/cropped-favicon-32x32.png' alt='logo'/>
                     <h2>Pay-Bank</h2>
 
                 <div className='header-nav'>

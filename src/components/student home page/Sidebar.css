@@ -4,7 +4,7 @@
     bottom: 0; 
     height: 100%;
     width: 260px;
-    background:rgb(33, 33, 146);
+    background:rgb(1, 1, 43);
     z-index: 100;
     transition: all 0.5s ease;
     
@@ -16,8 +16,7 @@
     padding-top: 25px;
     padding-bottom: 25px;
     font-size: xx-large;
-    
-          
+             
 }
 
 .options h3{
@@ -34,8 +33,12 @@ margin-top: 20px;
     font-weight: 800;
     border-radius: 20px;
     background-color: rgb(218, 172, 180);
+    border: none;
 }
-
+.loout button:hover{
+    background-color:#ff9100ef;
+    color: white;
+}
 
 
 
