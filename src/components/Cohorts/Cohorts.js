@@ -1,6 +1,12 @@
+<<<<<<< HEAD:src/components/Cohorts/Cohorts.js
 import React, { useState } from 'react';
 import CohortForm from '../CohortForm/CohortForm';
 import './Cohort.css';
+=======
+import React, { useState } from "react";
+import CohortForm from "./CohortForm";
+import "./Cohort.css";
+>>>>>>> c4ebd70 (Creates a clients pathway both for the student and andmin):src/components/Cohorts.js
 
 const Cohorts = () => {
   const [cohorts, setCohorts] = useState([]);
@@ -13,7 +19,9 @@ const Cohorts = () => {
   };
 
   const handleDeleteCohort = (cohortIndex) => {
-    const shouldDelete = window.confirm('Are you sure you want to delete this cohort?');
+    const shouldDelete = window.confirm(
+      "Are you sure you want to delete this cohort?"
+    );
     if (shouldDelete) {
       const newCohorts = [...cohorts];
       newCohorts.splice(cohortIndex, 1);
@@ -31,13 +39,22 @@ const Cohorts = () => {
   };
 
   const handleAction = (action, cohortIndex) => {
-    if (action === 'Delete') {
+    if (action === "Delete") {
       handleDeleteCohort(cohortIndex);
-    } else if (action === 'Update') {
+    } else if (action === "Update") {
       setSelectedCohortIndex(cohortIndex);
       setShowForm(true);
     }
   };
+
+  const handleUpdateCohort = (updatedCohort) => {
+    const updatedCohorts = [...cohorts];
+    updatedCohorts[selectedCohortIndex] = updatedCohort;
+    setCohorts(updatedCohorts);
+    setSelectedCohortIndex(-1);
+    setShowForm(false);
+  };
+
 
   return (
     <div>
@@ -49,7 +66,7 @@ const Cohorts = () => {
             <CohortForm
               onClose={handleCloseForm}
               onAdd={handleAddCohort}
-              onUpdate={setCohorts}
+              onUpdate={handleUpdateCohort}
               selectedCohort={cohorts[selectedCohortIndex]}
             />
           </div>
@@ -66,6 +83,7 @@ const Cohorts = () => {
         </thead>
         </table>
         <tbody>
+<<<<<<< HEAD:src/components/Cohorts/Cohorts.js
            
             {cohorts.map((cohort, index) => (
               <tr key={index}>
@@ -78,6 +96,29 @@ const Cohorts = () => {
               </tr>
             ))}            
           </tbody>
+=======
+          {cohorts.map((cohort, index) => (
+            <tr key={index}>
+              <td>{cohort.name}</td>
+              <td>{cohort.course}</td>
+              <td>{cohort.numberOfStudents}</td>
+              <td>
+                <select
+                  value=""
+                  onChange={(e) => handleAction(e.target.value, index)}
+                >
+                  <option disabled value="">
+                    Select an action
+                  </option>
+                  <option value="Update">Update</option>
+                  <option value="Delete">Delete</option>
+                </select>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+>>>>>>> c4ebd70 (Creates a clients pathway both for the student and andmin):src/components/Cohorts.js
     </div>
   );
 };

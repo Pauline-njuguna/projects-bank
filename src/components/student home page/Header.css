@@ -18,6 +18,7 @@
   .header h2{
    flex: 1;
     color:#05043D;
+    margin-left: 20px;
   }
    .header__nav{
     display: flex;

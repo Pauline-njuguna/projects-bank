@@ -2,7 +2,10 @@ table {
     border-collapse: collapse;
     width: 100%;
   }
-  
+  .cohort-page-container {
+  background-color: rgb(18, 18, 37);
+  padding: 16px;
+}
   tr {
     background-color: #e6e6ff;
   }
@@ -13,9 +16,14 @@ table {
   }
   
   th {
+<<<<<<< HEAD:src/components/Cohorts/Cohort.css
     background-color: #fbfdfb;
     color: rgb(5, 5, 5);
     text-align: center;
+=======
+    background-color: #362e66;
+    color: white;
+>>>>>>> c4ebd70 (Creates a clients pathway both for the student and andmin):src/components/Cohort.css
   }
   
   tr:nth-child(even) {
@@ -23,8 +31,13 @@ table {
   }
   
   button {
+<<<<<<< HEAD:src/components/Cohorts/Cohort.css
     background-color: #6e7f6e97;
     color: rgb(6, 6, 6);
+=======
+    background-color: #5b4caf;
+    color: white;
+>>>>>>> c4ebd70 (Creates a clients pathway both for the student and andmin):src/components/Cohort.css
     border: none;
     padding: 10px 20px;
     text-align: right;

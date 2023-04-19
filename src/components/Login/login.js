@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./login.css"; // Import the CSS file for styling
+import { useNavigate } from "react-router-dom";import "./login.css"; // Import the CSS file for styling
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -8,22 +8,22 @@ const Login = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [resetPassword, setResetPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-
+  const navigate = useNavigate();
   const handleLogin = () => {
     // Extract the domain from the email address
     const domain = email.split("@")[1];
 
-    if (domain === "admin.com" && password === "admin123") {
-      alert("Admin login successful"); // Show success message
-      // Redirect to admin dashboard
-      window.location.href = "/admin-dashboard";
-    } else if (domain === "student.com" && password === "student123") {
-      alert("Student login successful"); // Show success message
-      // Redirect to student dashboard
-      window.location.href = "/student-dashboard";
-    } else {
-      alert("Login failed");
-    }
+      if (domain === "admin.com" && password === "admin123") {
+        alert("Admin login successful"); // Show success message
+        // Redirect to cohort page
+        navigate("/cohorts"); 
+      } else if (domain === "student.com" && password === "student123") {
+        alert("Student login successful"); // Show success message
+        // Redirect to student dashboard
+        navigate("/add-project"); // Use the navigate function to navigate to the desired URL
+      } else {
+        alert("Login failed");
+      }
   };
 
   const handleResetPassword = () => {
