@@ -1,0 +1,7 @@
+.text-center{
+    left: 260px;
+    width: calc(100% - 260px);
+    bottom: 0%;
+    position: fixed;
+    
+}
