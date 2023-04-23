@@ -1,6 +1,10 @@
 import React,{useState} from 'react'
 import './Contact.css'
+<<<<<<< HEAD
 // import Sidebar from '../student home page/Sidebar';
+=======
+import Sidebar from '../student home page/Sidebar';
+>>>>>>> f4e1ed1 (creating the contact page)
 function Contact() {
     const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -29,7 +33,7 @@ function Contact() {
   };
   return (
     <>
-    {/* <Sidebar/> */}
+    <Sidebar/>
       
       <h1 className='title'>Contact Us</h1>
     
