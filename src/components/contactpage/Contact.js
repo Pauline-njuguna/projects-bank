@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import './Contact.css'
 import Sidebar from '../student home page/Sidebar';
+// import Sidebar from '../student home page/Sidebar'
 function Contact() {
     const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -29,7 +30,7 @@ function Contact() {
   };
   return (
     <>
-    <Sidebar/>
+    {/* <Sidebar/> */}
       
       <h1 className='title'>Contact Us</h1>
     

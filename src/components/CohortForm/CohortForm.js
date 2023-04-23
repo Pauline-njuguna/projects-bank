@@ -23,12 +23,26 @@ const CohortForm = (props) => {
       <form onSubmit={handleSubmit}>
         <label>
           NAME:
-          <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
+          <input
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
         </label>
         <br />
         <label>
           COURSE:
-          <input type="text" value={course} onChange={(event) => setCourse(event.target.value)} />
+          <select
+            value={course}
+            onChange={(event) => setCourse(event.target.value)}
+          >
+            <option value="Full-stack Development">
+              Full-stack Development
+            </option>
+            <option value="Data Science">Data Science</option>
+            <option value="Android Development">Android Development</option>
+            <option value="Cyber Security">Cyber Security</option>
+          </select>
         </label>
         <br />
         <label>

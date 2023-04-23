@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import CohortForm from '../CohortForm/CohortForm';
-import './Cohort.css';
+import React, { useState } from "react";
+import CohortForm from "../CohortForm/CohortForm";
+import "./Cohort.css";
 
 const Cohorts = () => {
   const [cohorts, setCohorts] = useState([]);
@@ -13,7 +13,9 @@ const Cohorts = () => {
   };
 
   const handleDeleteCohort = (cohortIndex) => {
-    const shouldDelete = window.confirm('Are you sure you want to delete this cohort?');
+    const shouldDelete = window.confirm(
+      "Are you sure you want to delete this cohort?"
+    );
     if (shouldDelete) {
       const newCohorts = [...cohorts];
       newCohorts.splice(cohortIndex, 1);
@@ -31,9 +33,9 @@ const Cohorts = () => {
   };
 
   const handleAction = (action, cohortIndex) => {
-    if (action === 'Delete') {
+    if (action === "Delete") {
       handleDeleteCohort(cohortIndex);
-    } else if (action === 'Update') {
+    } else if (action === "Update") {
       setSelectedCohortIndex(cohortIndex);
       setShowForm(true);
     }
@@ -64,20 +66,24 @@ const Cohorts = () => {
             <th>ACTION</th>
           </tr>
         </thead>
-        </table>
-        <tbody>
-           
-            {cohorts.map((cohort, index) => (
-              <tr key={index}>
-                <td>{cohort.name}</td>
-                <td>{cohort.course}</td>
-                <td>{cohort.numberOfStudents}</td>
-                <td>
-                  <button className="delete-button" onClick={() => handleDeleteCohort(index)}>Delete</button>
-                </td>
-              </tr>
-            ))}            
-          </tbody>
+      </table>
+      <tbody>
+        {cohorts.map((cohort, index) => (
+          <tr key={index}>
+            <td>{cohort.name}</td>
+            <td>{cohort.course}</td>
+            <td>{cohort.numberOfStudents}</td>
+            <td>
+              <button
+                className="delete-button"
+                onClick={() => handleDeleteCohort(index)}
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
     </div>
   );
 };
