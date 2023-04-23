@@ -15,9 +15,6 @@ function Header() {
                     <span className='option-one'>Contact us</span>
                 </div>
 
-                <div className='student-logout'>
-                    <button className='logout'>login</button>
-                </div>
 
             </div>
 

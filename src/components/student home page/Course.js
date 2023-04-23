@@ -22,6 +22,14 @@ function Course() {
             <img className='pictures' src='https://www.itu.int/en/ITU-D/Cybersecurity/PublishingImages/Projects.jpg' alt='Cyber security'/>
             <span> Cyber Security</span>
         </div>
+        <div className='stack'>
+            <img className='pictures' src='https://fjwp.s3.amazonaws.com/blog/wp-content/uploads/2020/05/07184138/DevOps-1024x512.png' alt='Cyber security'/>
+            <span> Devops Development</span>
+        </div>
+        <div className='stack'>
+            <img className='pictures' src='https://i.ytimg.com/vi/ewJgxHQo0TU/maxresdefault.jpg' alt='Cyber security'/>
+            <span> UI UX Design</span>
+        </div>
 
     </div>
     </>

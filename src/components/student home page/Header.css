@@ -2,7 +2,7 @@
   height: 80px;
   display: flex;
   align-items: center;
-  background-color: #EDEDED;
+  background-color:#BEBEBE;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -39,24 +39,10 @@
 }
 
 .option-one:hover {
-  background-color: #ff9100ef;
-  color: #EDEDED;
+  background-color: peachpuff;
+  color: black;
 }
 
-.logout {
-  margin-left: 20px;
-  width: 105px;
-  background-color: #045174;
-  color: aliceblue;
-  border-radius: 50%;
-  font-size: larger;
-  font-weight: 400;
-}
-
-.logout:hover {
-  background-color: #ff9100ef;
-  border: none;
-}
 
 @media only screen and (min-width: 768px) {
   .header {
