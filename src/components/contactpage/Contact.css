@@ -1,51 +1,61 @@
-.contacts{
+.contacts {
   display: flex;
+  position: relative;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: #f2f4ff;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: fit-content;
 }
-.sidecontact{
-     background-color: rgb(9, 9, 31);
-     width: 500px;
-     border-radius: 15px;
-     margin-right: 12px;
-     height: 60vh;
-     padding-top: 10px;
-     padding-left: 10px;
-     padding-right: 10px;
-     border: 2px solid;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.sidecontact {
+  display: flex;
+  position: relative;
+  background-color: #1e3a8a;
+  flex: 1;
+  border-radius: 15px;
+  padding: 32px 24px;
+  border: 2px solid;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: start;
+  flex-direction: column;
+  gap: 12px;
+  color: white;
+  justify-content: center;
 }
-.sidecontact h1{
-    font-weight: 800;
-    padding-bottom: 20px;
+.sidecontact h1 {
+  font-weight: bold;
+  margin: 0;
 }
-.sidecontact p{
-    flex-wrap: wrap;
-    width: 300px;
+.sidecontact p {
+  width: 100%;
+  text-align: left;
+  margin: 0;
 }
-.contact__form{
-  width: 80%;
-  height: 60vh;
-  max-width: 500px;
-  background-color: #fff;
+.contact__form {
+  width: min(100%, 600px);
+  background-color: #1e3a8a;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: white;
 }
-.input__space{
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    font-size: 16px;
+.input__space {
+  position: relative;
+  width: 95% !important;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
-label{
-    font-weight: 700;
+label {
+  font-weight: 700;
+  color: #fff;
 }
-.submit{
-    background-color:rgb(1, 1, 58);
+.submit {
+  background-color: rgb(1, 1, 58);
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -54,8 +64,16 @@ label{
   font-size: 16px;
   transition: background-color 0.3s ease;
   font-size: x-large;
+  text-align: center;
 }
-.title{
-    text-align: center;
-    font-weight: 800;
+.title {
+  text-align: center;
+  font-weight: 800;
+}
+
+.biz-info-el {
+  display: flex;
+  justify-content: start;
+  gap: 4px;
+  opacity: 70%;
 }
