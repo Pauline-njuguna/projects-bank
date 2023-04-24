@@ -1,11 +1,12 @@
 /* login.css */
-
 .login {
+  position: relative;
   width: 300px;
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 20px;
   background-color: #dcd5e0;
   border-radius: 5px;
+  height: fit-content;
 }
 
 .login-heading {
@@ -15,21 +16,25 @@
 
 .login-form {
   display: flex;
+  position: relative;
   flex-direction: column;
-}
-
-.login-label {
-  margin-bottom: 10px;
+  align-items: center;
+  justify-items: center;
+  flex-wrap: wrap;
+  background-color: #1e3a8a;
 }
 
 .login-input {
+  display: block;
+  position: relative;
+  width: 90%;
   padding: 8px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
 .login-button {
+  position: relative;
   padding: 8px;
   margin-top: 10px;
   background-color: #031529;
@@ -37,12 +42,73 @@
   border: none;
   cursor: pointer;
   border-radius: 3px;
+  width: 100%;
+  text-align: center;
 }
 
 .login-button:hover {
   background-color: #07090c;
 }
 
-.login-checkbox {
-  margin-right: 5px;
+.forgot-password {
+  border: none !important;
+  outline: none;
+  padding: 0px !important;
+  background-color: transparent !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  margin: 0px !important;
+  font-size: small;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: fit-content;
+  justify-items: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: fit-content;
+  gap: 5px;
+}
+
+.checkbox-container input {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.login-checkbox,
+.remember-me-label {
+  width: fit-content;
+  height: fit-content;
+  padding: 0px;
+}
+
+.remember-me-label {
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  font-size: small;
+}
+
+.login-actions-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-container > input {
+  position: relative;
+  width: 95%;
+  border-radius: 4px !important;
 }

@@ -1,20 +1,39 @@
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import Sidebar from '../student home page/Sidebar';
-import Header from '../student home page/Header';
-import Navbar from '../Navbar/Navbar';
+import './landingpage.css';
+// import Sidebar from '../student home page/Sidebar';
+// import Header from '../student home page/Header';
+// import Navbar from '../Navbar/Navbar';
 
-function Landingpage(props) {
-  
+function Landingpage (props) {
 
-  return (
-    <div>
-      <Navbar />
-      {/* <h1>Welcome {firstName} {lastName}!</h1>
+
+	return (
+		<div className='landingPageContainer'>
+			{/* <Navbar /> */ }
+			{/* <h1>Welcome {firstName} {lastName}!</h1>
       <p>Email: {email}</p> */}
-      <p> "LANDING PAGE TO BE POPULATED LATER " </p>
-      {/* Add any other content or functionality here */}
-    </div>
-  );
+			{/* <p> "LANDING PAGE TO BE POPULATED LATER " </p> */ }
+			{/* Add any other content or functionality here */ }
+
+			<section id="contentContainer">
+				<h2>Learning and teaching has never been easier.</h2>
+				<p>Teachers are able to add courses and student cohorts while viewing students project based learning. Come and rediscover the joy that is learning. </p>
+				<button className='primary'>
+				
+				<a href="https://moringaschool.com" target="_blank" rel="noopener noreferrer" className='primary'>
+					<p>Join Us</p>
+					<FontAwesomeIcon icon={ faArrowRightLong } />
+				</a>
+				</button>
+			</section>
+
+			<section id="imageContainer">
+				<span id="center-image"></span>
+			</section>
+		</div>
+	);
 }
 
 export default Landingpage;
