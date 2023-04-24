@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./login.css"; // Import the CSS file for styling
+import { useNavigate } from "react-router-dom";import "./login.css"; // Import the CSS file for styling
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -8,18 +8,23 @@ const Login = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [resetPassword, setResetPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-
+  const navigate = useNavigate();
   const handleLogin = () => {
-  // Handle login logic here
-  // e.g. send email and password to backend for authentication
-  if (email === "example@example.com" && password === "password123") {
-    // Replace the above condition with your actual login logic
-    alert("Successful login"); // Show success message
-  } else {
-    alert("Login failed"); // Show failure message
-  }
-};
+    // Extract the domain from the email address
+    const domain = email.split("@")[1];
 
+      if (domain === "admin.com" && password === "admin123") {
+        alert("Admin login successful"); // Show success message
+        // Redirect to cohort page
+        navigate("/cohorts"); 
+      } else if (domain === "student.com" && password === "student123") {
+        alert("Student login successful"); // Show success message
+        // Redirect to student dashboard
+        navigate("/add-project"); // Use the navigate function to navigate to the desired URL
+      } else {
+        alert("Login failed");
+      }
+  };
 
   const handleResetPassword = () => {
     if (newPassword !== confirmPassword) {
@@ -27,8 +32,6 @@ const Login = () => {
       return;
     }
     // Handle password reset logic here
-    // e.g. send email and newPassword to backend to update user's password
-    // and send an email with the new password to user's email address
     alert("Password reset successful!");
     setResetPassword(false);
   };
@@ -97,9 +100,8 @@ const Login = () => {
             <button
               className="login-button"
               type="button"
-              
-              onClick={() => setResetPassword(true)}>
-            
+              onClick={() => setResetPassword(true)}
+            >
               Forgot Password
             </button>
             <br />

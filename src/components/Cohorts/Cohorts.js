@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import CohortForm from '../CohortForm/CohortForm';
 import './Cohort.css';
+import Sidebar from "../student home page/Sidebar";
+import Header from '../student home page/Header';
+import Navbar from '../Navbar/Navbar';
 
 const Cohorts = () => {
   const [cohorts, setCohorts] = useState([]);
@@ -30,17 +33,10 @@ const Cohorts = () => {
     setShowForm(false);
   };
 
-  const handleAction = (action, cohortIndex) => {
-    if (action === 'Delete') {
-      handleDeleteCohort(cohortIndex);
-    } else if (action === 'Update') {
-      setSelectedCohortIndex(cohortIndex);
-      setShowForm(true);
-    }
-  };
-
   return (
-    <div>
+  <div>
+   
+    <Navbar />
       <h1>COHORTS</h1>
       <button onClick={handleShowForm}>ADD COHORT</button>
       {showForm && (
@@ -66,7 +62,7 @@ const Cohorts = () => {
         </thead>
         </table>
         <tbody>
-           
+           <table>
             {cohorts.map((cohort, index) => (
               <tr key={index}>
                 <td>{cohort.name}</td>
@@ -76,7 +72,8 @@ const Cohorts = () => {
                   <button className="delete-button" onClick={() => handleDeleteCohort(index)}>Delete</button>
                 </td>
               </tr>
-            ))}            
+            ))}  
+            </table>          
           </tbody>
     </div>
   );
